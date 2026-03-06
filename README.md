@@ -19,8 +19,8 @@ A clean, responsive expense tracking web app built with **React + Vite**, featur
 
 ##  Tech Stack
 
-| Technology | Usage |
-|---|
+| Technology | 
+
 | React + Vite | 
 | Tailwind CSS |
 | Frankfurter API | 
