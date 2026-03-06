@@ -40,7 +40,7 @@ export default function ExpenseList({ expenses, onDelete }) {
               </span>
               <button
                 onClick={() => onDelete(e.id)}
-                className="del-btn opacity-0 group-hover:opacity-100 transition-opacity duration-150"
+                className="del-btn"
               >
                 Remove
               </button>
