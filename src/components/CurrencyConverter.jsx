@@ -18,20 +18,21 @@ export default function CurrencyConverter({ total }) {
         setLoading(false);
       })
       .catch(() => {
-        setError("Failed to fetch rate. Try again.");
+        setError("Failed.");
         setLoading(false);
       });
   }, [currency]);
 
   return (
-    <div className="glass-card p-5 rounded-2xl">
-      <h2 className="text-lg font-semibold mb-3 tracking-tight" style={{ color: "var(--text-heading)" }}>
-        Currency Converter
-      </h2>
-      <div className="flex items-center gap-3">
-        <span className="text-sm" style={{ color: "var(--text-secondary)" }}>Convert total to:</span>
+    <div className="solid-card p-5 rounded-2xl  h-full">
+      <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "var(--text-muted)" }}>
+        Convert
+      </p>
+
+      <div className="mb-4">
+        <p className="text-xs mb-1.5" style={{ color: "var(--text-muted)" }}>INR to</p>
         <select
-          className="glass-input p-2 rounded-xl cursor-pointer"
+          className="clean-input px-3 py-2 rounded-xl text-sm cursor-pointer w-full"
           value={currency}
           onChange={(e) => setCurrency(e.target.value)}
         >
@@ -40,24 +41,23 @@ export default function CurrencyConverter({ total }) {
           ))}
         </select>
       </div>
-      <div className="mt-4 text-xl font-bold">
-        {loading && (
-          <p className="text-sm animate-pulse" style={{ color: "var(--text-muted)" }}>
-            Fetching rate...
+
+      {loading && (
+        <p className="text-xs mono" style={{ color: "var(--text-muted)" }}>Loading...</p>
+      )}
+      {error && (
+        <p className="text-xs" style={{ color: "#ef4444" }}>{error}</p>
+      )}
+      {!loading && !error && rate !== null && (
+        <>
+          <p className="text-2xl font-bold mono" style={{ color: "var(--text-heading)" }}>
+            {(total * rate).toFixed(2)}
           </p>
-        )}
-        {error && (
-          <p className="text-rose-500 text-sm">{error} — Showing USD instead</p>
-        )}
-        {!loading && !error && rate && (
-          <p className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-            {currency} {(total * rate).toFixed(2)}
+          <p className="text-xs mt-1 mono" style={{ color: "var(--text-muted)" }}>
+            {currency} · rate
           </p>
-        )}
-        {!loading && !error && !rate && (
-          <p className="text-sm" style={{ color: "var(--text-muted)" }}>Select a currency to convert</p>
-        )}
-      </div>
+        </>
+      )}
     </div>
   );
 }

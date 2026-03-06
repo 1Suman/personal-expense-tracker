@@ -8,34 +8,37 @@ export default function ExpenseForm({ onAdd }) {
   const [category, setCategory] = useState("Food");
 
   const handleSubmit = () => {
-    if (!name || !amount) return alert("Please fill all fields");
-    onAdd({ name, amount, category });
+    if (!name.trim() || !amount) return alert("Please fill all fields");
+    onAdd({ name: name.trim(), amount, category });
     setName("");
     setAmount("");
     setCategory("Food");
   };
 
   return (
-    <div className="glass-card p-5 rounded-2xl">
-      <h2 className="text-lg font-semibold mb-4 tracking-tight" style={{ color: "var(--text-heading)" }}>
-        Add Expense
-      </h2>
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+    <div className="solid-card p-5 rounded-2xl">
+      <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "var(--text-muted)" }}>
+        New Entry
+      </p>
+
+      <div className="flex flex-col gap-3 sm:flex-row">
         <input
-          className="glass-input p-2.5 rounded-xl"
+          className="clean-input px-3 py-2.5 rounded-xl text-sm w-full"
           placeholder="Expense name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
         />
         <input
-          className="glass-input p-2.5 rounded-xl"
-          placeholder="Amount (INR)"
+          className="clean-input px-3 py-2.5 rounded-xl text-sm mono w-full"
+          placeholder="Amount (₹)"
           type="number"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
         />
         <select
-          className="glass-input p-2.5 rounded-xl cursor-pointer"
+          className="clean-input px-3 py-2.5 rounded-xl text-sm cursor-pointer w-full"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         >
@@ -44,9 +47,10 @@ export default function ExpenseForm({ onAdd }) {
           ))}
         </select>
       </div>
+
       <button
         onClick={handleSubmit}
-        className="mt-4 w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white py-2.5 rounded-xl font-semibold tracking-wide hover:from-violet-500 hover:to-indigo-500 shadow-lg shadow-violet-600/25 hover:shadow-violet-500/40 active:scale-[0.98] transition-all duration-200 cursor-pointer"
+        className="accent-btn mt-3 w-full py-2.5 rounded-xl"
       >
         Add Expense
       </button>
