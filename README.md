@@ -33,12 +33,6 @@ npm install
 npm run dev
 ```
 
-##  Responsive Design
-
-Tested and optimized for:
--  Desktop — 1600×900
--  Mobile — 414×749
-
 ---
 
 ## 👨‍💻 Author
