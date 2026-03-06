@@ -1,4 +1,4 @@
-# 💸 Personal Expense Tracker
+# Personal Expense Tracker
 
 A clean, responsive expense tracking web app built with **React + Vite**, featuring a glassmorphism UI, live currency conversion, and dark/light mode.
 
@@ -6,7 +6,7 @@ A clean, responsive expense tracking web app built with **React + Vite**, featur
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Add Expenses** — Enter a name, amount (INR), and category
 - **Category Breakdown** — Summary panel shows spending per category
@@ -17,19 +17,18 @@ A clean, responsive expense tracking web app built with **React + Vite**, featur
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Technology | Usage |
-|---|---|
-| React + Vite | Frontend framework & build tool |
-| Tailwind CSS | Utility-first styling |
-| Custom CSS Variables | Glassmorphism UI, dark/light theming |
-| Frankfurter API | Live exchange rates |
+|---|
+| React + Vite | 
+| Tailwind CSS |
+| Frankfurter API | 
 | localStorage |
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ```bash
 # Clone the repository
@@ -45,11 +44,11 @@ npm install
 npm run dev
 ```
 
-## 📱 Responsive Design
+##  Responsive Design
 
 Tested and optimized for:
-- 🖥️ Desktop — 1600×900
-- 📱 Mobile — 414×749
+-  Desktop — 1600×900
+-  Mobile — 414×749
 
 ---
 
