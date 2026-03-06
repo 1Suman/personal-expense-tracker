@@ -45,22 +45,6 @@ npm install
 npm run dev
 ```
 
-## 📁 Project Structure
-
-```
-src/
-├── App.jsx                  # Root component, theme logic
-├── main.jsx                 # Entry point
-├── index.css                # Global styles, CSS variables
-└── components/
-    ├── ExpenseForm.jsx      # Add expense form
-    ├── ExpenseList.jsx      # Expense list with delete
-    ├── SummaryPanel.jsx     # Total + category breakdown
-    └── CurrencyConverter.jsx # Live INR converter
-```
-
----
-
 ## 📱 Responsive Design
 
 Tested and optimized for:
@@ -68,3 +52,7 @@ Tested and optimized for:
 - 📱 Mobile — 414×749
 
 ---
+
+## 👨‍💻 Author
+Suman Shrestha  
+
